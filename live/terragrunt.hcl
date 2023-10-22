@@ -6,9 +6,11 @@ remote_state {
   backend = "gcs"
 
   config = {
+    project              = get_env("TG_PROJECT")
     bucket               = get_env("TG_BUCKET")
-    prefix               = "terragrunt-gcp-gke-private/${path_relative_to_include()}"
-    skip_bucket_creation = true
+    prefix               = "gke-private/${path_relative_to_include()}"
+    location             = "ASIA-SOUTH2"
+    skip_bucket_creation = false
   }
 }
 
@@ -82,9 +84,10 @@ terraform {
 EOF
 }
 
-terraform {
-  before_hook "tfsec" {
-    commands = ["apply", "plan"]
-    execute  = ["tfsec", "--config-file", "${get_parent_terragrunt_dir()}/tfsec.yml"]
-  }
-}
+# NEW_INFO
+// terraform {
+//   before_hook "tfsec" {
+//     commands = ["apply", "plan"]
+//     execute  = ["tfsec", "--config-file", "${get_parent_terragrunt_dir()}/tfsec.yml"]
+//   }
+// }

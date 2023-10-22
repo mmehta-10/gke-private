@@ -2,7 +2,7 @@
 
 set -xeuo pipefail
 
-cd ./resources
+cd ./live
 terragrunt hclfmt
 terraform fmt -recursive
 

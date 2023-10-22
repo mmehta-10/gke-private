@@ -3,9 +3,9 @@ set -xe
 
 PROXY_PORT=8080
 
-GKE_CLUSTER=$(cd resources/04-gke && terragrunt output -raw name)
-REGION=$(cd resources/01-common && terragrunt output -raw region)
-ZONE=$(cd resources/01-common && terragrunt output -raw zone)
+GKE_CLUSTER=$(cd live/04-gke && terragrunt output -raw name)
+REGION=$(cd live/01-common && terragrunt output -raw region)
+ZONE=$(cd live/01-common && terragrunt output -raw zone)
 
 echo GKE_CLUSTER: $GKE_CLUSTER
 echo ZONE: $ZONE

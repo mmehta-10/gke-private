@@ -1,0 +1,9 @@
+terragrunt 0.52.3
+terraform 1.6.2
+terraform-docs 0.16.0
+tflint 0.48.0
+tfsec 1.28.4
+kubectl 1.28.3
+kustomize 5.1.1
+gcloud 451.0.1
+pre-commit 3.5.0

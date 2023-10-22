@@ -1,7 +1,7 @@
 #!/bin/bash
 
-rm -rf resources/*/.terragrunt-cache
-rm -rf resources/*/.terraform.lock.hcl
+rm -rf live/*/.terragrunt-cache
+rm -rf live/*/.terraform.lock.hcl
 
 # Kill IAP tunnel
 if command -v pkill; then
